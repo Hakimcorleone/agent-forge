@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentForge — AI Agent Setup for Businesses</title>
+<meta name="description" content="AgentForge builds practical AI agents for teams: Discord/Telegram assistants, SEO agents, research bots, reporting workflows, and internal operations automation.">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060D1F;--panel:#091326;--panel2:#0D1A30;--ink:#F0EBE1;--muted:#A8B8CC;--faint:rgba(240,235,225,.55);--cream:#C8B89A;--cream2:#E6D7B8;--line:rgba(200,184,154,.16);--line2:rgba(200,184,154,.28);--ok:#89D6A1;--warn:#E9C46A;--r:16px;--serif:'Libre Baskerville',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}p{color:var(--muted)}
+.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 80% 10%,rgba(200,184,154,.13),transparent 32%),radial-gradient(circle at 15% 35%,rgba(60,91,148,.22),transparent 34%),linear-gradient(180deg,#060D1F 0%,#081226 48%,#050914 100%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 7%;background:rgba(6,13,31,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.logo{font-family:var(--mono);font-size:.82rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cream)}.nav-right{display:flex;gap:26px;align-items:center}.nav-link{font-size:.84rem;color:var(--muted);font-weight:500}.nav-link:hover{color:var(--ink)}.nav-cta{background:var(--cream);color:#071020;padding:10px 18px;border-radius:999px;font-size:.84rem;font-weight:700;transition:.2s}.nav-cta:hover{transform:translateY(-1px);background:var(--cream2)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:130px 7% 80px;border-bottom:1px solid var(--line)}.kicker{font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:22px}.h1{font-family:var(--serif);font-size:clamp(2.65rem,5vw,5.2rem);line-height:1.02;letter-spacing:-.04em;margin-bottom:26px}.h1 em{font-style:italic;color:var(--cream2)}.lead{font-size:1.18rem;max-width:680px;color:var(--muted);margin-bottom:34px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;font-weight:700}.btn-primary{background:var(--cream);color:#071020}.btn-secondary{border:1px solid var(--line2);color:var(--ink);background:rgba(255,255,255,.02)}.btn-primary:hover,.btn-secondary:hover{transform:translateY(-1px)}
+.hero-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(13,26,48,.92),rgba(9,19,38,.94));border-radius:24px;padding:28px;box-shadow:0 26px 80px rgba(0,0,0,.34)}.terminal{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050A15}.term-top{display:flex;gap:8px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.03)}.dot{width:10px;height:10px;border-radius:50%;background:var(--cream)}.term-body{padding:22px;font-family:var(--mono);font-size:.82rem;color:#C8D3E1}.term-line{margin-bottom:13px}.prompt{color:var(--cream)}.success{color:var(--ok)}.dim{color:#6F8097}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.stat{padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}.stat b{display:block;color:var(--ink);font-size:1.35rem}.stat span{font-size:.76rem;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
+section{padding:96px 7%;border-bottom:1px solid var(--line)}.section-head{max-width:820px;margin-bottom:42px}.label{font-family:var(--mono);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:14px}.h2{font-family:var(--serif);font-size:clamp(2rem,3.4vw,3.6rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:18px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:22px;padding:24px;background:rgba(9,19,38,.72)}.card h3{font-size:1.08rem;margin-bottom:10px}.card p,.card li{font-size:.96rem;color:var(--muted)}.card ul{padding-left:18px;margin-top:10px}.wide{grid-column:span 2}.process{counter-reset:step}.step{position:relative;padding-left:58px}.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:24px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:#071020;font-weight:800}.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price{border:1px solid var(--line);border-radius:24px;padding:26px;background:linear-gradient(180deg,rgba(13,26,48,.95),rgba(6,13,31,.95))}.price.featured{border-color:var(--cream);box-shadow:0 0 0 1px rgba(200,184,154,.28),0 26px 70px rgba(0,0,0,.28)}.price-name{font-family:var(--mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}.price h3{font-family:var(--serif);font-size:1.55rem;margin:12px 0}.amount{font-size:1.8rem;font-weight:800;color:var(--ink);margin-bottom:10px}.note{font-size:.85rem;color:var(--faint)}
+.cta{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;border:1px solid var(--line);border-radius:28px;padding:36px;background:linear-gradient(135deg,rgba(200,184,154,.14),rgba(13,26,48,.9))}.cta h2{font-family:var(--serif);font-size:2.3rem;line-height:1.1;margin-bottom:10px}.footer{padding:34px 7%;display:flex;justify-content:space-between;gap:20px;color:var(--faint);font-size:.88rem}.footer a{color:var(--cream)}
+@media(max-width:900px){nav{padding:16px 5%}.nav-link{display:none}.hero{grid-template-columns:1fr;padding:112px 5% 64px}.grid,.pricing{grid-template-columns:1fr}.wide{grid-column:auto}.cta{grid-template-columns:1fr}.footer{flex-direction:column}.stat-grid{grid-template-columns:1fr}.h1{font-size:3rem}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<nav>
+  <a class="logo" href="/">AgentForge</a>
+  <div class="nav-right">
+    <a class="nav-link" href="#services">Services</a>
+    <a class="nav-link" href="#process">Process</a>
+    <a class="nav-link" href="#pricing">Pricing</a>
+    <a class="nav-cta" href="mailto:agentforgegq@gmail.com?subject=AI%20Agent%20Setup%20Call">Book setup call</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="kicker">AI Agent Setup for Businesses</div>
+    <h1 class="h1">Custom AI agents that do actual work — <em>not another chatbot demo.</em></h1>
+    <p class="lead">We build practical AI agents inside Discord, Telegram, email, and internal workflows so teams can automate research, SEO, reporting, support, content, and operations.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="mailto:agentforgegq@gmail.com?subject=AI%20Agent%20Setup%20Call">Book a setup call →</a>
+      <a class="btn-secondary" href="#services">See what we build</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="terminal">
+      <div class="term-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dim">agentforge / live ops</span></div>
+      <div class="term-body">
+        <div class="term-line"><span class="prompt">user:</span> audit our SEO and create next actions</div>
+        <div class="term-line"><span class="success">agent:</span> checked pages, keywords, content gaps, competitors</div>
+        <div class="term-line"><span class="success">agent:</span> drafted report + weekly content plan</div>
+        <div class="term-line"><span class="prompt">admin:</span> approve publishing workflow?</div>
+        <div class="term-line"><span class="dim">safe mode: approval required for external actions</span></div>
+      </div>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><b>7–14d</b><span>Typical MVP</span></div>
+      <div class="stat"><b>24/7</b><span>Team access</span></div>
+      <div class="stat"><b>Safe</b><span>Approval flow</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="section-head">
+    <div class="label">What we build</div>
+    <h2 class="h2">AI agents for teams that need output, not experiments.</h2>
+    <p class="lead">Start with one useful workflow. Prove it. Then expand into more tools, channels, and automations.</p>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>AI Ops Assistant</h3><p>A private team agent in Discord or Telegram for research, reporting, SOPs, reminders, and daily ops requests.</p></div>
+    <div class="card"><h3>SEO & Content Agent</h3><p>Keyword research, competitor checks, briefs, content calendars, audits, internal linking, and weekly SEO action plans.</p></div>
+    <div class="card"><h3>Support / Lead Response Agent</h3><p>Respond faster to inbound leads, answer common questions, route requests, and prepare human-ready summaries.</p></div>
+    <div class="card"><h3>Email + Outreach Workflow</h3><p>Draft personalized emails, follow-ups, reply triage, lead tracking, and booked-call handoff.</p></div>
+    <div class="card"><h3>Internal Knowledge Agent</h3><p>Turn docs, SOPs, Notion, Google Drive, or project notes into a searchable assistant for your team.</p></div>
+    <div class="card"><h3>Custom Integrations</h3><p>Connect the agent to APIs, CRMs, spreadsheets, dashboards, webhooks, MCP tools, or your existing stack.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <div class="label">Why AgentForge</div>
+    <h2 class="h2">We ship controlled automation, not risky autopilot.</h2>
+  </div>
+  <div class="grid">
+    <div class="card wide"><h3>Human approval where it matters</h3><p>Agents can draft, research, summarize, and prepare actions. Sensitive actions like sending emails, publishing, deleting, charging, or changing data can require admin approval first.</p></div>
+    <div class="card"><h3>Built around your workflow</h3><p>We map the real process first, then choose the tools. No bloated dashboard if a Discord workflow solves it.</p></div>
+    <div class="card"><h3>Provider flexible</h3><p>Claude, OpenAI, DeepSeek, Gemini, OpenRouter, or local models depending on cost, quality, and task type.</p></div>
+    <div class="card wide"><h3>Designed for handover</h3><p>You get simple usage rules, prompt examples, admin controls, and a practical runbook so the system is usable after setup.</p></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="section-head">
+    <div class="label">Process</div>
+    <h2 class="h2">From messy workflow to working agent.</h2>
+  </div>
+  <div class="grid process">
+    <div class="card step"><h3>Scope the workflow</h3><p>We pick one high-value process: leads, SEO, ops, support, reporting, or internal knowledge.</p></div>
+    <div class="card step"><h3>Build the agent</h3><p>We set up the runtime, model, channels, tools, credentials, permissions, and safe approval rules.</p></div>
+    <div class="card step"><h3>Test with your team</h3><p>We run UAT, fix edge cases, document usage, and decide what should stay draft-only vs approved automation.</p></div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="section-head">
+    <div class="label">Packages</div>
+    <h2 class="h2">Start small. Expand after proof.</h2>
+    <p class="lead">Pricing depends on integrations, data access, and approval rules. These are starting ranges for global clients.</p>
+  </div>
+  <div class="pricing">
+    <div class="price"><div class="price-name">Starter</div><h3>Single Workflow Agent</h3><div class="amount">From $750</div><p>One channel, one core workflow, basic docs, and handover.</p><p class="note">Good for testing demand fast.</p></div>
+    <div class="price featured"><div class="price-name">Most common</div><h3>Business Agent Setup</h3><div class="amount">$1.5k–$3k</div><p>Discord/Telegram agent, model setup, skills/workflows, integrations, permissions, and UAT.</p><p class="note">Best for teams that want real usage.</p></div>
+    <div class="price"><div class="price-name">Ongoing</div><h3>AI Ops Retainer</h3><div class="amount">$300–$1k/mo</div><p>Monitoring, prompt/workflow improvements, new automations, reporting, and support.</p><p class="note">For continuous improvement.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="cta">
+    <div>
+      <h2>Want an AI agent your team can actually use?</h2>
+      <p>Send us your workflow, tools, and goal. We’ll reply with the fastest safe setup path.</p>
+    </div>
+    <a class="btn-primary" href="mailto:agentforgegq@gmail.com?subject=AI%20Agent%20Setup%20Call&body=Hi%20AgentForge%2C%0A%0AI%20want%20to%20set%20up%20an%20AI%20agent%20for%3A%0A%0ACompany%3A%0AWorkflow%3A%0ATools%20we%20use%3A%0AGoal%3A%0A%0A">Book setup call →</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>© 2026 AgentForge. Practical AI agents for business workflows.</div>
+  <div><a href="mailto:agentforgegq@gmail.com">agentforgegq@gmail.com</a></div>
+</footer>
+</body>
+</html>
