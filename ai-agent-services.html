@@ -42,7 +42,8 @@ a{color:inherit;text-decoration:none}p{color:var(--muted)}
 .bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 80% -10%,rgba(37,99,235,.12),transparent 32%),radial-gradient(circle at 7% 18%,rgba(234,88,12,.10),transparent 30%),linear-gradient(180deg,#FFFFFF 0%,#FAFAF7 48%,#F7F4EF 100%)}
 .bg:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.2),rgba(255,255,255,.8));pointer-events:none}
 .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
-.site-nav{position:sticky;top:0;z-index:80;border-bottom:1px solid var(--line);background:rgba(255,255,255,.82);backdrop-filter:blur(18px)}
+.promo-bar{position:sticky;top:0;z-index:90;overflow:hidden;background:#0B0D12;color:#fff;border-bottom:1px solid rgba(255,255,255,.10)}.promo-track{display:flex;width:max-content;gap:38px;align-items:center;white-space:nowrap;animation:promo-marquee 28s linear infinite;padding:10px 0;font-family:var(--font-mono);font-size:.76rem;letter-spacing:.07em;text-transform:uppercase}.promo-track span{display:inline-flex;align-items:center;gap:10px;color:#F8FAFC}.promo-track b{color:#FDBA74}.promo-dot{width:6px;height:6px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 5px rgba(22,163,74,.14)}@keyframes promo-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.site-nav{position:sticky;top:38px;z-index:80;border-bottom:1px solid var(--line);background:rgba(255,255,255,.82);backdrop-filter:blur(18px)}
 .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--ink)}.brand-mark{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--orange));box-shadow:0 10px 26px rgba(37,99,235,.18)}
 .nav-links{display:flex;align-items:center;gap:24px}.nav-links a{font-size:.9rem;font-weight:650;color:var(--muted);transition:color .2s ease}.nav-links a:hover{color:var(--ink)}
 .nav-cta,.btn-primary,.btn-secondary{min-height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:pointer}.nav-cta{padding:0 18px;background:var(--ink);color:#fff!important;font-size:.9rem;box-shadow:var(--shadow-soft)}.nav-cta:hover,.btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
@@ -58,15 +59,30 @@ section{padding:88px 0;border-top:1px solid var(--line)}.section-head{max-width:
 
 .discord-shot{margin-top:18px;border:1px solid rgba(88,101,242,.20);border-radius:var(--r-lg);background:#313338;color:#DBDEE1;box-shadow:0 28px 70px rgba(49,51,56,.22);overflow:hidden;display:grid;grid-template-columns:220px 1fr;min-height:360px}.discord-sidebar{background:#2B2D31;padding:18px;border-right:1px solid rgba(255,255,255,.06)}.discord-server{width:38px;height:38px;border-radius:14px;background:#5865F2;display:grid;place-items:center;font-family:var(--font-mono);font-weight:800;color:white;margin-bottom:20px}.discord-nav{display:grid;gap:9px}.discord-nav span{display:block;padding:9px 10px;border-radius:10px;color:#AEB4BF;font-size:.86rem}.discord-nav span.active{background:#404249;color:#fff;font-weight:800}.discord-main{display:grid;grid-template-rows:auto 1fr}.discord-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 18px;border-bottom:1px solid rgba(255,255,255,.07);background:#313338}.discord-top b{color:#F2F3F5}.discord-status{font-family:var(--font-mono);font-size:.68rem;color:#AEB4BF;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 9px}.discord-feed{padding:18px;display:grid;gap:14px}.discord-msg{display:grid;grid-template-columns:38px 1fr;gap:12px}.avatar{width:38px;height:38px;border-radius:50%;background:#5865F2;display:grid;place-items:center;font-family:var(--font-mono);font-size:.72rem;color:#fff;font-weight:800}.avatar.staff{background:#3BA55D}.discord-copy{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:12px 14px}.discord-copy b{color:#fff}.discord-copy p{color:#C7CBD1;font-size:.9rem;line-height:1.5;margin-top:4px}.discord-embed{margin-top:9px;border-left:3px solid #5865F2;background:#2B2D31;border-radius:10px;padding:10px}.discord-embed strong{display:block;color:#fff;margin-bottom:5px}.discord-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.discord-actions span{font-family:var(--font-mono);font-size:.68rem;color:#DDE1FF;background:rgba(88,101,242,.18);border:1px solid rgba(88,101,242,.25);border-radius:999px;padding:6px 8px}
 
+
+.platform-grid{margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.platform-card{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;box-shadow:var(--shadow-soft);overflow:hidden}.platform-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#FAFAF7)}.phone-demo{background:#EAF7EE;padding:18px;display:grid;gap:10px}.phone-row{max-width:84%;border-radius:18px;padding:11px 13px;font-size:.88rem;line-height:1.42;box-shadow:0 6px 14px rgba(15,23,42,.06)}.phone-row.in{background:#fff;border-bottom-left-radius:5px;color:#243044}.phone-row.out{justify-self:end;background:#D9FDD3;border-bottom-right-radius:5px;color:#153A20}.phone-note{margin-top:4px;background:#fff;border:1px solid rgba(22,163,74,.18);border-radius:14px;padding:11px 12px;font-family:var(--font-mono);font-size:.72rem;color:#166534}.dashboard-demo{padding:18px;background:radial-gradient(circle at 100% 0,rgba(37,99,235,.10),transparent 32%),#fff}.dashboard-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.dash-metric{border:1px solid var(--line);border-radius:16px;padding:13px;background:#FAFAF7}.dash-metric b{display:block;font-size:1.35rem;line-height:1;color:var(--ink)}.dash-metric span{font-family:var(--font-mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.dash-queue{display:grid;gap:9px}.dash-item{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:14px;background:#fff;padding:11px 12px;font-size:.86rem}.dash-item small{display:block;color:var(--muted);font-family:var(--font-mono);font-size:.66rem}.dash-pill{border-radius:999px;padding:5px 8px;font-family:var(--font-mono);font-size:.66rem;background:var(--blue-soft);color:#1D4ED8}.telegram-demo{padding:18px;background:#EEF7FF;display:grid;gap:10px}.tg-command{border:1px solid rgba(34,158,217,.18);background:#fff;border-radius:16px;padding:12px 14px;font-size:.88rem;color:#173B7A}.tg-command b{color:#0B0D12}.platform-copy{padding:0 18px 18px;color:var(--muted);font-size:.92rem}.custom-note{margin-top:18px;border:1px solid rgba(234,88,12,.18);border-radius:22px;background:linear-gradient(135deg,#FFF7ED,#FFFFFF);padding:18px 20px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}.custom-note b{color:var(--ink)}.custom-note span{color:var(--muted);font-size:.94rem}
+
 :focus-visible{outline:3px solid rgba(37,99,235,.55);outline-offset:4px;border-radius:10px}
-@media(max-width:980px){.nav-links a:not(.nav-cta){display:none}.hero-grid,.split,.proof-grid,.faq,.cta-panel,.demo-board,.demo-side,.discord-shot{grid-template-columns:1fr}.hero{padding:64px 0}.quote-card{position:relative;top:0}.grid,.pricing{grid-template-columns:1fr 1fr}.wide{grid-column:auto}}
-@media(max-width:640px){.demo-strip{grid-template-columns:1fr}.mini-demo{border-right:0!important;border-bottom:1px solid var(--line)!important}.mini-demo:last-child{border-bottom:0!important}.container{width:min(100% - 28px,var(--max))}.nav-inner{height:68px}.brand{font-size:.72rem}.brand-mark{width:26px;height:26px}.nav-cta{min-height:44px;padding:0 14px;font-size:.82rem}.hero{padding:48px 0 58px}.hero-grid{gap:32px}h1{font-size:3.45rem}.hero-copy{font-size:1rem}.hero-actions a{width:100%}.grid,.pricing{grid-template-columns:1fr}section{padding:64px 0}.task{grid-template-columns:30px 1fr}.badge{display:none}.ops-body{padding:18px}.cta-panel{padding:28px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:980px){.nav-links a:not(.nav-cta){display:none}.hero-grid,.split,.proof-grid,.faq,.cta-panel,.demo-board,.demo-side,.discord-shot,.platform-grid{grid-template-columns:1fr}.hero{padding:64px 0}.quote-card{position:relative;top:0}.grid,.pricing{grid-template-columns:1fr 1fr}.wide{grid-column:auto}}
+@media(max-width:640px){.promo-track{font-size:.68rem;animation-duration:22s}.site-nav{top:34px}.demo-strip,.dashboard-metrics{grid-template-columns:1fr}.mini-demo{border-right:0!important;border-bottom:1px solid var(--line)!important}.mini-demo:last-child{border-bottom:0!important}.container{width:min(100% - 28px,var(--max))}.nav-inner{height:68px}.brand{font-size:.72rem}.brand-mark{width:26px;height:26px}.nav-cta{min-height:44px;padding:0 14px;font-size:.82rem}.hero{padding:48px 0 58px}.hero-grid{gap:32px}h1{font-size:3.45rem}.hero-copy{font-size:1rem}.hero-actions a{width:100%}.grid,.pricing{grid-template-columns:1fr}section{padding:64px 0}.task{grid-template-columns:30px 1fr}.badge{display:none}.ops-body{padding:18px}.cta-panel{padding:28px;border-radius:24px}.footer-inner{flex-direction:column;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="bg" aria-hidden="true"></div>
+<div class="promo-bar" aria-label="Current offer">
+  <div class="promo-track">
+    <span><i class="promo-dot" aria-hidden="true"></i><b>AI agent setups from USD 1,500</b></span>
+    <span>WhatsApp · Telegram · Discord · Custom Dashboard</span>
+    <span>Custom workflows available for sales, support, SEO, ops and reporting</span>
+    <span><b>Book a setup quote →</b></span>
+    <span><i class="promo-dot" aria-hidden="true"></i><b>AI agent setups from USD 1,500</b></span>
+    <span>WhatsApp · Telegram · Discord · Custom Dashboard</span>
+    <span>Custom workflows available for sales, support, SEO, ops and reporting</span>
+    <span><b>Book a setup quote →</b></span>
+  </div>
+</div>
 <nav class="site-nav" aria-label="Primary navigation">
   <div class="container nav-inner">
     <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span>AgentForgeHQ</span></a>
@@ -85,7 +101,7 @@ section{padding:88px 0;border-top:1px solid var(--line)}.section-head{max-width:
     <div>
       <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> AI Agent Setup for Global Teams</div>
       <h1>Turn messy work into a reliable <span class="accent">AI ops system.</span></h1>
-      <p class="hero-copy">We build practical AI agents inside Discord, Telegram, email, and internal tools — so teams can automate research, SEO, reporting, lead response, content, and operations without risky autopilot.</p>
+      <p class="hero-copy">We build practical AI agents inside WhatsApp, Telegram, Discord, email, and custom dashboards — so teams can automate research, SEO, reporting, lead response, content, and operations without risky autopilot.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="mailto:agentforgehq@gmail.com?subject=AI%20Agent%20Setup%20Quote&body=Hi%20AgentForgeHQ%2C%0A%0AI%20want%20to%20discuss%20an%20AI%20agent%20setup.%0A%0ACompany%3A%0AWorkflow%20to%20automate%3A%0ATools%20we%20use%3A%0AGoal%3A%0ABudget%20range%3A%0A">Request a setup quote</a>
         <a class="btn-secondary" href="#services">See service scope</a>
@@ -138,51 +154,72 @@ section{padding:88px 0;border-top:1px solid var(--line)}.section-head{max-width:
   <div class="container">
     <div class="section-head">
       <div class="label">Live demo ideas</div>
-      <h2 id="demo-title" class="h2">See the agent inside the tools your team already uses.</h2>
-      <p class="section-copy">Pick a familiar channel: Telegram for owners, Discord for teams, WhatsApp for customers, email for follow-up, and dashboards for reporting. We build the demo around your real workflow, not a canned chatbot.</p>
+      <h2 id="demo-title" class="h2">Four ways your AI agent can show up.</h2>
+      <p class="section-copy">Same brain, different interface. We can place the agent in WhatsApp for customers, Telegram for owners, Discord for team ops, or a private dashboard when you need a cleaner control room.</p>
     </div>
 
     <div class="demo-board">
-      <article class="demo-large" aria-label="Telegram owner assistant demo">
+      <article class="demo-large" aria-label="WhatsApp lead qualifier demo">
         <div class="demo-head">
-          <div class="demo-channel"><span class="channel-dot tg">TG</span><span>Telegram owner assistant</span></div>
-          <span class="demo-tag">owner view</span>
+          <div class="demo-channel"><span class="channel-dot wa">WA</span><span>WhatsApp lead qualifier</span></div>
+          <span class="demo-tag">customer view</span>
         </div>
-        <div class="chat-window">
-          <div class="bubble user">Founder: Any new leads today? Show me the hot ones only.</div>
-          <div class="bubble agent"><strong>AgentForgeHQ:</strong> 7 new inquiries. 2 are hot leads: one agency and one clinic. Both asked about pricing and launch timeline.</div>
-          <div class="bubble user">Draft a reply for the clinic. Do not send it yet.</div>
-          <div class="bubble agent"><strong>Draft ready.</strong> I asked for current WhatsApp volume, FAQ docs, booking system, and preferred launch date. Waiting for your approval.</div>
-          <div class="bubble action">approval_required: external_message_send · assigned_to: Hakim · log_saved: Google Sheets</div>
+        <div class="phone-demo">
+          <div class="phone-row in">Hi, do you build AI agents for clinics? We get a lot of WhatsApp inquiries.</div>
+          <div class="phone-row out"><strong>AgentForgeHQ:</strong> Yes. I can help qualify the workflow first. Roughly how many inquiries come in per day?</div>
+          <div class="phone-row in">Around 40–60. Most ask the same questions before booking.</div>
+          <div class="phone-row out">Got it. I’ll collect volume, FAQ, booking tool, and approval rules before handing this to the team.</div>
+          <div class="phone-note">lead_score: warm · use_case: clinic WhatsApp support · next_action: human follow-up</div>
         </div>
       </article>
 
-      <div class="demo-side" aria-label="More demo cards">
-        <article class="mini-demo">
-          <span class="channel-dot dc">DC</span>
-          <h3>Discord team ops room</h3>
-          <p>Staff report tasks, agent summarizes blockers, boss gets a clean daily command brief.</p>
-          <div class="mini-output">#ops → 14 tasks checked · 3 blockers · 2 approvals needed</div>
-        </article>
-        <article class="mini-demo">
-          <span class="channel-dot wa">WA</span>
-          <h3>WhatsApp lead qualifier</h3>
-          <p>Answers common questions, qualifies budget and routes hot leads to sales.</p>
-          <div class="mini-output">lead_score: hot · budget: $1k+ · handover: sales</div>
-        </article>
-        <article class="mini-demo">
-          <span class="channel-dot mail">EM</span>
-          <h3>Gmail reply drafter</h3>
-          <p>Reads inquiries, drafts replies, labels urgency and waits for approval before sending.</p>
-          <div class="mini-lines"><span class="mini-line"></span><span class="mini-line short"></span></div>
-        </article>
-        <article class="mini-demo">
-          <span class="channel-dot web">WEB</span>
-          <h3>Website chat demo</h3>
-          <p>Trained on services, pricing range, FAQs and escalation rules for public visitors.</p>
-          <div class="mini-output">fallback: “Let me pass this to the team.”</div>
-        </article>
-      </div>
+      <article class="platform-card" aria-label="Custom AI dashboard demo">
+        <div class="platform-head">
+          <div class="demo-channel"><span class="channel-dot web">DB</span><span>Custom dashboard</span></div>
+          <span class="demo-tag">control room</span>
+        </div>
+        <div class="dashboard-demo">
+          <div class="dashboard-metrics">
+            <div class="dash-metric"><b>37</b><span>new leads</span></div>
+            <div class="dash-metric"><b>11</b><span>need approval</span></div>
+            <div class="dash-metric"><b>6</b><span>hot today</span></div>
+          </div>
+          <div class="dash-queue">
+            <div class="dash-item"><div><b>Approve outbound replies</b><small>Gmail + WhatsApp drafts ready</small></div><span class="dash-pill">review</span></div>
+            <div class="dash-item"><div><b>Weekly SEO actions</b><small>12 content gaps, 4 quick wins</small></div><span class="dash-pill">ready</span></div>
+            <div class="dash-item"><div><b>Ops blockers</b><small>3 tasks waiting on staff input</small></div><span class="dash-pill">assign</span></div>
+          </div>
+        </div>
+        <p class="platform-copy">Best when you need owners, managers, and staff to see the same approvals, logs, metrics, and next actions in one private portal.</p>
+      </article>
+    </div>
+
+    <div class="platform-grid" aria-label="Telegram and Discord demo variations">
+      <article class="platform-card">
+        <div class="platform-head">
+          <div class="demo-channel"><span class="channel-dot tg">TG</span><span>Telegram owner assistant</span></div>
+          <span class="demo-tag">owner view</span>
+        </div>
+        <div class="telegram-demo">
+          <div class="tg-command"><b>/morning_brief</b><br>Show sales-ready leads, campaign issues, cash-sensitive tasks, and anything that needs my approval.</div>
+          <div class="tg-command"><b>AgentForgeHQ:</b><br>2 hot leads, 1 unpaid invoice risk, 3 content approvals. I drafted the replies but did not send anything.</div>
+          <div class="tg-command"><b>Owner:</b><br>Approve the agency lead. Hold the invoice follow-up until tomorrow.</div>
+        </div>
+        <p class="platform-copy">Best for founders who want fast command-style updates from mobile without opening a dashboard.</p>
+      </article>
+
+      <article class="platform-card">
+        <div class="platform-head">
+          <div class="demo-channel"><span class="channel-dot dc">DC</span><span>Discord team ops room</span></div>
+          <span class="demo-tag">team view</span>
+        </div>
+        <div class="chat-window">
+          <div class="bubble user">Staff: Finished the client draft. Waiting for product screenshots.</div>
+          <div class="bubble agent"><strong>AgentForgeHQ:</strong> Logged. I found 3 blockers across the team and prepared a manager brief for today.</div>
+          <div class="bubble action">#daily-ops → 14 tasks checked · 3 blockers · 2 approvals needed</div>
+        </div>
+        <p class="platform-copy">Best for teams already living in channels: staff reports work, the agent summarizes, managers approve the next action.</p>
+      </article>
     </div>
 
     <article class="discord-shot" aria-label="Discord AI agent demo screenshot">
@@ -215,6 +252,11 @@ section{padding:88px 0;border-top:1px solid var(--line)}.section-head{max-width:
         </div>
       </div>
     </article>
+
+    <div class="custom-note" aria-label="Custom workflow note">
+      <b>Need something else?</b>
+      <span>We can build around your CRM, sheets, website forms, email inbox, Notion, custom API, internal dashboard, or a hybrid of multiple tools.</span>
+    </div>
 
     <div class="demo-strip" aria-label="Additional demo modules">
       <div class="demo-chip"><b>Google Sheets CRM</b><span>Every lead saved with source, need, budget, status and next action.</span></div>
@@ -281,12 +323,12 @@ section{padding:88px 0;border-top:1px solid var(--line)}.section-head{max-width:
     <div class="section-head">
       <div class="label">Starting packages</div>
       <h2 class="h2">Launch lean. Scale after proof.</h2>
-      <p class="section-copy">Final pricing depends on integrations, data access, approval rules, and support needs.</p>
+      <p class="section-copy">Setups start at USD 1,500. Final pricing is custom based on integrations, data access, approval rules, dashboard needs, and support scope.</p>
     </div>
     <div class="pricing">
-      <article class="price"><div class="price-kicker">Starter</div><h3>Single Workflow Agent</h3><div class="amount">from $750</div><p>One channel, one workflow, basic docs, and handover.</p><ul><li>Workflow map</li><li>Agent setup</li><li>Basic handover docs</li></ul><a class="price-cta" href="mailto:agentforgehq@gmail.com?subject=Starter%20Workflow%20Agent">Start with Starter</a><p class="note">Best for validating demand fast.</p></article>
-      <article class="price featured"><div class="price-kicker">Most common</div><h3>Business Agent Setup</h3><div class="amount">$1.5k – $3k</div><p>Team agent, model setup, tools, skills, integrations, admin roles, approval rules, and UAT.</p><ul><li>Team channel setup</li><li>Tools + permissions</li><li>Testing + launch support</li></ul><a class="price-cta" href="mailto:agentforgehq@gmail.com?subject=Business%20Agent%20Setup">Get this scoped</a><p class="note">Best for real team usage.</p></article>
-      <article class="price"><div class="price-kicker">Ongoing</div><h3>AI Ops Retainer</h3><div class="amount">$300 – $1k/mo</div><p>Monitoring, workflow improvements, new automations, reporting, and support.</p><ul><li>Monthly improvements</li><li>Usage monitoring</li><li>Support + reporting</li></ul><a class="price-cta" href="mailto:agentforgehq@gmail.com?subject=AI%20Ops%20Retainer">Discuss retainer</a><p class="note">Best after the first agent is live.</p></article>
+      <article class="price"><div class="price-kicker">Starter</div><h3>Single Workflow Agent</h3><div class="amount">from USD 1,500</div><p>One channel, one workflow, basic docs, testing, and handover.</p><ul><li>Workflow map</li><li>Agent setup</li><li>Basic handover docs</li></ul><a class="price-cta" href="mailto:agentforgehq@gmail.com?subject=Starter%20Workflow%20Agent">Start with Starter</a><p class="note">Entry point for a useful, controlled MVP.</p></article>
+      <article class="price featured"><div class="price-kicker">Most common</div><h3>Business Agent Setup</h3><div class="amount">Custom quote</div><p>Team agent, model setup, tools, skills, integrations, admin roles, approval rules, and UAT.</p><ul><li>Team channel setup</li><li>Tools + permissions</li><li>Testing + launch support</li></ul><a class="price-cta" href="mailto:agentforgehq@gmail.com?subject=Business%20Agent%20Setup">Get this scoped</a><p class="note">Scoped from USD 1,500 based on complexity.</p></article>
+      <article class="price"><div class="price-kicker">Ongoing</div><h3>AI Ops Retainer</h3><div class="amount">Custom monthly</div><p>Monitoring, workflow improvements, new automations, reporting, and support.</p><ul><li>Monthly improvements</li><li>Usage monitoring</li><li>Support + reporting</li></ul><a class="price-cta" href="mailto:agentforgehq@gmail.com?subject=AI%20Ops%20Retainer">Discuss retainer</a><p class="note">Best after the first agent is live.</p></article>
     </div>
   </div>
 </section>
